@@ -1,0 +1,49 @@
+Tutorial ·
+¿Cómo instalar Webmin en Ubuntu 22.04?
+Introducción
+El Webmin es un panel de control de servidor basado en web, que permite administrar y configurar los sistemas Linux y otros sistemas operativos similares a Unix desde una interfaz gráfica de usuario en un navegador web. Webmin proporciona una amplia gama de herramientas de administración del sistema, que incluyen la configuración de la red, la administración de usuarios y grupos. Y no solamente esto, también incluyen la gestión de archivos y directorios, la configuración de servicios, la gestión de bases de datos y mucho más.
+
+Antes de empezar con el tutorial, ¿no tienes un servidor Cloud Linux Ubuntu 22.04 en el que puedas instalar tu Webmin? ¡No te preocupes! Con solo un clic, puedes desplegarlo fácilmente con SW Hosting.
+
+
+Tu Cloud con Ubuntu 22 desde 5,60$/mes
+Sácale el máximo partido a tu proyecto con el Cloud que tiene los discos más rápidos y CPU de alto rendimiento.
+
+Ahora que se ha aclarado un poco qué es Webmin. Vamos a empezar con el tutorial, en el cual se te explicará cómo instalar Webmin en Ubuntu 22.04.
+
+Paso 1: Actualizar el sistema
+Antes de instalar cualquier software nuevo en Ubuntu, recuerda que siempre debes de actualizar el sistema para tener las últimas versiones de los paquetes de software. Para esto, abre una terminal y ejecuta los siguientes comandos:
+
+sudo apt-get update
+sudo apt-get upgrade
+Paso 2: Agregar el repositorio de Webmin
+El repositorio de Webmin no se incluye en los repositorios predeterminados de Ubuntu, por lo que debes agregar el repositorio de Webmin tú mismo para instalarlo. Para agregar el repositorio, sigue estos pasos:
+
+Abre una terminal y ejecuta el siguiente comando para descargar e instalar la clave GPG de Webmin:
+wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add -
+A continuación, ejecuta el siguiente comando para agregar el repositorio de Webmin al archivo /etc/apt/sources.list:
+sudo sh -c 'echo "deb https://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list'
+Finalmente, actualiza los repositorios de paquetes, ejecutando el siguiente comando:
+sudo apt-get update
+Paso 3: Instalar Webmin
+Una vez que se haya agregado el repositorio de Webmin, puedes instalarlo utilizando el siguiente comando:
+
+sudo apt-get install webmin
+Este comando descargará e instalará todas las dependencias necesarias de Webmin y configurará el servidor web y los servicios necesarios para ejecutar Webmin.
+
+Paso 4: Acceder a Webmin
+Después de haber completado la instalación, puedes acceder a Webmin desde un navegador web en la dirección https://localhost:10000 o https://ip_address:10000. Si estás accediendo a Webmin desde la misma máquina donde lo has instalado, puedes utilizar localhost como dirección en tu navegador.
+
+enter image description here
+
+Paso 5: Iniciar sesión en Webmin
+Para iniciar sesión en Webmin, utiliza las mismas credenciales que utilizas para iniciar sesión en tu sistema Ubuntu. Si tu cuenta no tiene permisos de superusuario, asegúrate de agregar la cuenta a la lista de usuarios con acceso a Webmin. Lo puedes hacer utilizando este comando:
+
+sudo /usr/share/webmin/changepass.pl /etc/webmin/htusers <username>
+Cambia <username> por el nombre de usuario que quieras agregar.
+
+Ya está, ¡eso es todo! Ahora ya tienes el Webmin instalado y funcionando en tu servidor Ubuntu 22.04.
+
+enter image description here
+
+Recuerda que si no dispones aun de un servidor Cloud con sistema operativo Linux puedes desplegarlo fácilmente con SW Hosting.
